@@ -147,7 +147,7 @@ DetectorNode::DetectorNode(rclcpp::NodeOptions options)
 
   // Input topic ~/images [sensor_msgs/msg/Image]
   impl_->image_sub_ = this->create_subscription<sensor_msgs::msg::Image>(
-    "~/images", 12, std::bind(&DetectorNodePrivate::on_image_rx, &*impl_, std::placeholders::_1));
+    "~/images", 1, std::bind(&DetectorNodePrivate::on_image_rx, &*impl_, std::placeholders::_1));
 }
 
 DetectorNode::~DetectorNode()
